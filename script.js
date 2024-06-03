@@ -1,3 +1,4 @@
 document.getElementById('my-button').addEventListener('click', function() {
-    alert('Button clicked!');
-});
+    let clickCount = 0;
+    document.getElementById('my-button').innerText = `Clicked ${++clickCount} times!`;
+  });
