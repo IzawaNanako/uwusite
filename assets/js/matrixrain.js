@@ -4,7 +4,7 @@ const context = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const words = 'ABCDEFGHIJKLMNOPQRSTUVWXYZΓΔΘΛΞΠΣΦΧΩαΨβγδεζηθικλμνξπρςστυφχψω0123456789';
+const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZΓΔΘΛΞΠΣΦΩαΨβγδεζηθικλμνξπρςστυφχψω0123456789';
 
 const siz = 16;
 const col = canvas.width/siz;
@@ -23,7 +23,7 @@ const draw = () => {
 
     for(let i = 0; i < matrix.length; i++)
     {
-        const text = words.charAt(Math.floor(Math.random() * words.length));
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
         context.fillText(text, i*siz, matrix[i]*siz);
 
         if(matrix[i]*siz > canvas.height && Math.random() > 0.975){

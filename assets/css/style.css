@@ -1,9 +1,16 @@
+html {
+    background: black;
+    height: 100%;
+    overflow: hidden;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     margin: 0;
+    padding: 0;
     background-color:#000000;
 }
 
@@ -15,4 +22,3 @@ body {
     padding: 10px 20px;
     font-size: 16px;
 }
-
