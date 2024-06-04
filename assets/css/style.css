@@ -1,5 +1,5 @@
 html {
-    background: black;
+    background: #201c1c;
     height: 100%;
     overflow: hidden;
 }
@@ -11,7 +11,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color:#000000;
+    background-color:#201c1c;
 }
 
 #centered-button {

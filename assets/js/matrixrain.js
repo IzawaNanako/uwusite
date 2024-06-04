@@ -4,7 +4,7 @@ const context = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZΓΔΘΛΞΠΣΦΩαΨβγδεζηθικλμνξπρςστυφχψω0123456789';
+const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZΓΔΘΛΞΠΣΦΩαΨβγδεζηθικλμνξπρςστυφχψω0123456789あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわゐゑをん';
 
 const siz = 16;
 const col = canvas.width/siz;
@@ -44,23 +44,24 @@ window.addEventListener("resize", () => {
     gradientColor.addColorStop(0.6, "cyan");
     gradientColor.addColorStop(0.8, "blue");
     gradientColor.addColorStop(0, "magenta");
-  });
+});
   
-  window.addEventListener("dblclick", () => {
+window.addEventListener("dblclick", () => {
     defaultColor === singleColor
       ? (defaultColor = gradientColor)
       : (defaultColor = singleColor);
-  });
+});
   
-  var lastTouchEnd = 0;
-  window.addEventListener("touchend", () => {
+var lastTouchEnd = 0;
+
+window.addEventListener("touchend", () => {
     var now = new Date().getTime();
     if (now - lastTouchEnd <= 300) {
-      defaultColor === singleColor
+        defaultColor === singleColor
         ? (defaultColor = gradientColor)
         : (defaultColor = singleColor);
     }
     lastTouchEnd = now;
-  });
+});
 
 setInterval(draw, 30);
