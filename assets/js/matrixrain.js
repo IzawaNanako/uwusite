@@ -33,4 +33,34 @@ const draw = () => {
     }
 };
 
+window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    effect.resize(canvas.width, canvas.height);
+    gradientColor = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    gradientColor.addColorStop(0, "red");
+    gradientColor.addColorStop(0.2, "yellow");
+    gradientColor.addColorStop(0.4, "green");
+    gradientColor.addColorStop(0.6, "cyan");
+    gradientColor.addColorStop(0.8, "blue");
+    gradientColor.addColorStop(0, "magenta");
+  });
+  
+  window.addEventListener("dblclick", () => {
+    defaultColor === singleColor
+      ? (defaultColor = gradientColor)
+      : (defaultColor = singleColor);
+  });
+  
+  var lastTouchEnd = 0;
+  window.addEventListener("touchend", () => {
+    var now = new Date().getTime();
+    if (now - lastTouchEnd <= 300) {
+      defaultColor === singleColor
+        ? (defaultColor = gradientColor)
+        : (defaultColor = singleColor);
+    }
+    lastTouchEnd = now;
+  });
+
 setInterval(draw, 30);

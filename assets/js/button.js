@@ -4,6 +4,6 @@ document.getElementById('my-button').addEventListener('click', function() {
     document.getElementById('my-button').innerText = `Clicked ${++clickCount} times!`;
 
     if (clickCount >= 10) {
-        window.location.href = "../html/matrixrain.html";
+        window.location.href = "assets/html/matrixrain.html";
     }
   });
