@@ -4,6 +4,6 @@ document.getElementById('my-button').addEventListener('click', function() {
     document.getElementById('my-button').innerText = `Clicked ${++clickCount} times!`;
 
     if (clickCount >= 10) {
-        window.location.href = "wordrain.html";
+        window.location.href = "wordrain/wordrain.html";
     }
   });
