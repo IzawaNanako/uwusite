@@ -39,6 +39,8 @@ function clickStopped(clicksRecorded) {
         case 40:
             window.location.href = "assets/html/rainbow.html";
             break;
+        case 50:
+            window.location.href = "assets/html/eropic.html";
         default:
             break;
     }
