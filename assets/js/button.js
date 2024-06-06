@@ -13,7 +13,7 @@ button.addEventListener('click', function() {
 function startTimer() {
     clickTimer = window.setTimeout(function() {
         clickStopped(clickCount);
-    }, 3000);
+    }, 1500);
 }
 
 function stopTimer() {
