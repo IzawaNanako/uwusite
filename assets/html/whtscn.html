@@ -3,13 +3,18 @@
     <head>
         <title>FLASHBANGED</title>
         <link rel="stylesheet" href="../css/whtscn.css">
-        <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="../imgs/favicon.ico">
     </head>
 
     <body>
         <script src="../js/togglefullscreen.js"></script>
         <script>
             document.addEventListener('click', toggleFullscreen);
+            document.addEventListener('click', toggleCursor);
+
+            function toggleCursor() {
+                document.documentElement.classList.toggle('hideCursor');
+            }
         </script>
     </body>
 </html>
