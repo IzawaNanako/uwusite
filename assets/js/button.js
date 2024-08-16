@@ -45,3 +45,6 @@ function clickStopped(clicksRecorded) {
             break;
     }
 }
+
+// You know I understand not knowing what the hell is going on is frustrating, but come on, that's the point of the whole site,
+// you ruined everything, fuck you.
