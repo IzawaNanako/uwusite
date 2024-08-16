@@ -7,14 +7,12 @@
     </head>
 
     <body onclick="toggleFullscreen()">
+        <div id="drinking">
+            <img class="img" src="../imgs/drinking.png"/>
+        </div>
+        <audio id="combobreak" src="../sfx/combobreak.mp3"></audio>
         <script src="../js/togglefullscreen.js"></script>
-        <script>
-            document.addEventListener('click', toggleFullscreen);
-            document.addEventListener('click', toggleCursor);
-
-            function toggleCursor() {
-                document.documentElement.classList.toggle('hideCursor');
-            }
-        </script>
+        <script src="../js/toomucheffort.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </body>
 </html>
