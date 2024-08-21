@@ -5,14 +5,19 @@
         <link rel="stylesheet" href="../css/blkscn.css">
         <link rel="icon" type="image/x-icon" href="../imgs/favicon.ico">
     </head>
-
-    <body onclick="toggleFullscreen()">
-        <div id="drinking">
-            <img class="img" src="../imgs/drinking.png"/>
-        </div>
+    <body>
+        <details id="secrets">
+            <img class="drinking" src="../imgs/drinking.png"/>
+            <p class="onetwothree">
+                <span style="color: green;">1</span> 
+                <span style="color: yellow;">2</span>
+                <span style="color: red;">3</span>
+            </p>
+        </details>
+        <div id="loading-container"></div>
         <audio id="combobreak" src="../sfx/combobreak.mp3"></audio>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="../js/togglefullscreen.js"></script>
         <script src="../js/toomucheffort.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </body>
 </html>
