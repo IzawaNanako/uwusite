@@ -28,19 +28,19 @@ function restartTimer() {
 function clickStopped(clicksRecorded) {
     switch (clicksRecorded) {
         case 10:
-            window.location.href = "assets/html/matrixrain.html";
+            window.location.href = "../../matrixrain";
             break;
         case 20:
-            window.location.href = "assets/html/blkscn.html";
+            window.location.href = "../../blackscreen";
             break;
         case 30:
-            window.location.href = "assets/html/whtscn.html";
+            window.location.href = "../../whitescreen";
             break;
         case 40:
-            window.location.href = "assets/html/rainbow.html";
+            window.location.href = "../../rainbow";
             break;
         case 50:
-            window.location.href = "assets/html/slippery.html";
+            window.location.href = "../../slippery";
         default:
             break;
     }
