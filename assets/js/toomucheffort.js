@@ -2,15 +2,17 @@ $(document).on('click', toggleFullscreen);
 $(document).on('click', toggleCursor);
 
 var isKeyDown = false;
+var isFocus = false;
 var comboCount = 0;
 
 document.addEventListener('keydown', (e) => {
     e.preventDefault();
-    if (!isKeyDown) {
+    if (!isKeyDown && !isFocus) {
         if (e.key === 'Delete') {
-            $("#secrets").toggle();
+            $("#secrets").hide();
             alert("killed all secrets\nfocus mode on.")
             isKeyDown = true;
+            isFocus = true;
         }
         if (e.key === 'm' || e.key === 'M') {
             toggleFullscreen();
