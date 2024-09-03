@@ -1,6 +1,8 @@
 $(document).on('click', toggleFullscreen);
 $(document).on('click', toggleCursor);
 
+const comboList = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowLeft', 'ArrowRight', 'ArrowRight', 'A', 'B'];
+
 var isKeyDown = false;
 var isFocus = false;
 var comboCount = 0;
@@ -48,77 +50,17 @@ document.addEventListener('keydown', (e) => {
             loadFor(1000);
             isKeyDown = true;
         }
-        if (e.key === 'ArrowUp') {
-            document.addEventListener('keyup', (e) => {
-                if (e.key === 'ArrowUp') {
-                    comboCount = 1;
-                }
-            })
-        }
-        if (e.key === 'ArrowUp' && comboCount == 1) {
-            document.addEventListener('keyup', (e) => {
-                if (e.key === 'ArrowUp') {
-                    comboCount = 2;
-                }
-            })
-        }
-        if (e.key === 'ArrowDown' && comboCount == 2) {
-            document.addEventListener('keyup', (e) => {
-                if (e.key === 'ArrowDown') {
-                    comboCount = 3;
-                }
-            })
-        }
-        if (e.key === 'ArrowDown' && comboCount == 3) {
-            document.addEventListener('keyup', (e) => {
-                if (e.key === 'ArrowDown') {
-                    comboCount = 4;
-                }
-            })
-        }
-        if (e.key === 'ArrowLeft' && comboCount == 4) {
-            document.addEventListener('keyup', (e) => {
-                if (e.key === 'ArrowLeft') {
-                    comboCount = 5;
-                }
-            })
-        }
-        if (e.key === 'ArrowLeft' && comboCount == 5) {
-            document.addEventListener('keyup', (e) => {
-                if (e.key === 'ArrowLeft') {
-                    comboCount = 6;
-                }
-            })
-        }
-        if (e.key === 'ArrowRight' && comboCount == 6) {
-            document.addEventListener('keyup', (e) => {
-                if (e.key === 'ArrowRight') {
-                    comboCount = 7;
-                }
-            })
-        }
-        if (e.key === 'ArrowRight' && comboCount == 7) {
-            document.addEventListener('keyup', (e) => {
-                if (e.key === 'ArrowRight') {
-                    comboCount = 8;
-                }
-            })
-        }
-        if ((e.key === 'A' || e.key === 'a') && comboCount == 8) {
-            document.addEventListener('keyup', (e) => {
-                if (e.key === 'A' || e.key === 'a') {
-                    comboCount = 9;
-                }
-            })
-        }
-        if ((e.key === 'B' || e.key === 'b') && comboCount == 9) {
-            document.addEventListener('keyup', (e) => {
-                if (e.key === 'B' || e.key === 'b') {
-                    loadFor(2000);
-                    //temp
-                    window.location = "https://www.nyan.cat/#";
-                }
-            })
+        if (e.key === comboList[comboCount] || ((e.key === 'a' || e.key === 'b') && comboCount >= 8)) {
+            if (e.key === comboList[comboCount] || (e.key === 'a' && comboCount === 8)) {
+                comboCount++;
+            }
+            else if ((e.key === 'B' || e.key === 'b') && comboCount === 9) {
+                loadFor(2000);
+                window.location = "https://www.nyan.cat/#"; //
+            }
+            else {
+                comboCount = 0;
+            }
             isKeyDown = true;
         }
     }
@@ -126,9 +68,6 @@ document.addEventListener('keydown', (e) => {
 });
 
 document.addEventListener('keyup', (e) => {
-    if (isKeyDown == true) {
-        comboCount = 0;
-    }
     isKeyDown = false;
 });
 
