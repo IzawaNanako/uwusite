@@ -31,7 +31,7 @@ function clickStopped(clicksRecorded) {
             window.location.href = "../../matrixrain";
             break;
         case 20:
-            window.location.href = "../../blackscreen";
+            window.location.href = "../../colorscreen";
             break;
         case 30:
             window.location.href = "../../whitescreen";

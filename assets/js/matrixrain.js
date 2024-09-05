@@ -10,7 +10,7 @@ const siz = 16;
 const col = canvas.width/siz;
 const matrix = [];
 
-for( let x = 0; x < col; x++ ) {
+for ( let x = 0; x < col; x++ ) {
     matrix[x] = 1;
 }
 
@@ -21,7 +21,7 @@ const draw = () => {
     context.fillStyle = '#0F0';
     context.font = siz + 'px monospace';
 
-    for(let i = 0; i < matrix.length; i++)
+    for (let i = 0; i < matrix.length; i++)
     {
         const text = letters.charAt(Math.floor(Math.random() * letters.length));
         context.fillText(text, i*siz, matrix[i]*siz);

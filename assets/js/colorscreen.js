@@ -9,7 +9,7 @@ var comboCount = 0;
 
 document.addEventListener('keydown', (e) => {
     e.preventDefault();
-    if (!isKeyDown && !isFocus) {
+    if (!(isKeyDown || isFocus)) {
         if (e.key === 'Delete') {
             $("#secrets").hide();
             alert("killed all secrets\nfocus mode on.")
@@ -56,10 +56,23 @@ document.addEventListener('keydown', (e) => {
             }
             else if ((e.key === 'B' || e.key === 'b') && comboCount === 9) {
                 loadFor(2000);
-                window.location = "https://www.nyan.cat/#"; //
+                window.location = "https://www.nyan.cat/#"; //TODO temp
             }
             else {
                 comboCount = 0;
+            }
+            isKeyDown = true;
+        }
+        if (e.key === 'c' || e.key === 'C') {
+            const backgroundColor = prompt("Enter a color, either common colors or in hex.\nNote: Only hex is guaranteed to work.", "Ex. red, #000000, FFFFFF, random");
+            if (backgroundColor === "random") {
+                document.body.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+            }
+            else if (backgroundColor.length === 6) {
+                document.body.style.backgroundColor = "#" + backgroundColor;
+            }
+            else {
+                document.body.style.backgroundColor = backgroundColor;
             }
             isKeyDown = true;
         }
