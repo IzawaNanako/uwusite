@@ -1,45 +1,64 @@
-//TODO make this a real thing
-//acceptable values: 0, +-1~9, +, -, *, /, =, ^(root capable), (, ), ., %, !
-//considerable values: sqrt()
-//priority: () -> ^ -> * / -> else
-//decimal and fraction
-//buttons or not, input box must
-
-var input = prompt("test", "etc");
-const answer = calc(input);
-
-function calc() {
-
-}
-
-function power(n, m) {
-    return Math.pow(n, m);
-}
-
-function times(n, m) {
-    return n * m;
-}
-
-function divide(n, m) {
-    return n / m;
-}
-
-function plus(n, m) {
-    return n + m;
-}
-
-function minus(n, m) {
-    return n - m;
-}
-
-function mod(n, m) {
-    return n % m;
-}
-
-function factor(n) {
-    var value = 1;
-    for (var i=2;i<=n;i++) {
-        value *= i;
+//TODO still need more functions.
+//TODO actually make pi event.
+$('.input').on('keyup', function(e) {
+    if (e.key === '(') {
+        $(this).val($(this).val() + ')');
     }
-    return value;
+});
+
+$('.question').submit(function(e) {
+    e.preventDefault();
+    let expression = $('.input').val();
+    expression = expression.replace(/sin\(/g, 'sin(' + Math.PI / 180 + '*');
+    expression = expression.replace(/cos\(/g, 'cos(' + Math.PI / 180 + '*');
+    expression = expression.replace(/tan\(/g, 'tan(' + Math.PI / 180 + '*');
+    if (expression === 42) {
+        $('.answer').text('The answer to life, the universe, and everything.');
+    }
+    else if (expression === 'The answer to life, the universe, and everything.') {
+        $('.answer').text(42);
+    }
+    else if (expression === 'π') {
+        // startPiEvent();
+        window.location='https://raw.githubusercontent.com/eneko/Pi/master/one-million.txt';
+    }
+    else {
+        try {
+            const result = math.evaluate(expression);
+            $('.answer').text(result);
+        }
+        catch (error) {
+            $('.answer').text('Error');
+            console.error(error);
+        }
+    }
+})
+/*
+function startPiEvent() {
+    $('#question').hide();
+    $('#equal-operator').hide();
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            window.close;
+        }
+    })
+
+    let warningCountdown = 300;
+
+    timeBeforeDeath();
+
+    function timeBeforeDeath() {
+        if (warningCountdown > 0) {
+            $('#answer').text('You got ' + warningCountdown/100 + ' more seconds to escape!');
+            setTimeout(function() {
+                timeBeforeDeath();
+            }, 10);
+        }
+        else {
+            $('#answer').css('font-size', '12px').css('top', '0').css('left', '0');
+            calculatePi();
+        }
+        warningCountdown--;
+    }
 }
+*/

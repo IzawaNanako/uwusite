@@ -1,7 +1,7 @@
 const button = document.getElementById('my-button');
 
-var clickCount=0;
-var clickTimer;
+let clickCount=0;
+let clickTimer;
 
 startTimer();
 
@@ -28,19 +28,19 @@ function restartTimer() {
 function clickStopped(clicksRecorded) {
     switch (clicksRecorded) {
         case 10:
-            window.location.href = "../../calculator";
+            window.location.href = '../../calculator';
             break;
         case 20:
-            window.location.href = "../../colorscreen";
+            window.location.href = '../../colorscreen';
             break;
         case 30:
-            window.location.href = "../../matrixrain";
+            window.location.href = '../../matrixrain';
             break;
         case 40:
-            window.location.href = "../../rainbow";
+            window.location.href = '../../rainbow';
             break;
         case 50:
-            window.location.href = "../../slippery";
+            window.location.href = '../../slippery';
             break;
         default:
             break;

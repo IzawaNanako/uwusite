@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #201c1c;
+}
+
+#calculator {
+    width: 90%;
+    display: table;
+    margin: auto;
+    text-align: center;
+}
+
+.input {
+    display: table-cell;
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    font-family: monospace;
+    letter-spacing: 1px;
+}
+
+.input-label {
+    display: table-cell;
+    text-align: center;
+    color: darkmagenta;
+    font-size: 24px;
+    font-family: monospace;
+    letter-spacing: 1px;
+    text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black, 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+}
+
+.answer {
+    text-align: center;
+    color: hotpink;
+    font-size: 144px;
+    font-family: monospace;
+    letter-spacing: 1px;
+    text-shadow: 2px 0 indigo, -2px 0 darkorchid, 0 2px purple, 0 -2px mediumpurple, 1px 1px rebeccapurple, -1px -1px darkviolet, 1px -1px mediumorchid, -1px 1px darkmagenta;
+}
+
+.equal-operator {
+    text-align: center;
+    color: orange;
+    font-size: 56px;
+    font-family: monospace;
+    text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black, 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+}

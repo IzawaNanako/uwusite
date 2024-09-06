@@ -1,5 +1,8 @@
-var elem = document.documentElement;
-var fullscreen = false;
+document.getElementById('fullscreen-overlay').addEventListener('click', toggleFullscreen);
+
+const elem = document.documentElement;
+
+let fullscreen = false;
 
 function openFullscreen() {
     if (elem.requestFullscreen) {
@@ -10,6 +13,9 @@ function openFullscreen() {
     }
     else if (elem.msRequestFullscreen) {
         elem.msRequestFullscreen();
+    }
+    else if (elem.mozRequestFullScreen) {
+        elem.mozRequestFullScreen();
     }
 }
 
@@ -22,6 +28,9 @@ function closeFullscreen() {
     }
     else if (document.msExitFullscreen) {
         document.msExitFullscreen();
+    }
+    else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
     }
 }
 

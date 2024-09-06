@@ -1,18 +1,17 @@
-$(document).on('click', toggleFullscreen);
 $(document).on('click', toggleCursor);
 
 const comboList = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowLeft', 'ArrowRight', 'ArrowRight', 'A', 'B'];
 
-var isKeyDown = false;
-var isFocus = false;
-var comboCount = 0;
+let isKeyDown = false;
+let isFocus = false;
+let comboCount = 0;
 
 document.addEventListener('keydown', (e) => {
     e.preventDefault();
     if (!(isKeyDown || isFocus)) {
         if (e.key === 'Delete') {
-            $("#secrets").hide();
-            alert("killed all secrets\nfocus mode on.")
+            $('#secrets').hide();
+            alert('killed all secrets\nfocus mode on.');
             isKeyDown = true;
             isFocus = true;
         }
@@ -22,30 +21,30 @@ document.addEventListener('keydown', (e) => {
             isKeyDown = true;
         }
         if (e.key === 'j' || e.key === 'J') {
-            $(".drinking").toggle();
+            $('.drinking').toggle();
             if (e.key === 'J') {
-                $(".drinking").toggleClass("rotate");
+                $('.drinking').toggleClass('rotate');
             }
             isKeyDown = true;
         }
         if (e.key === 'End') {
-            $(".onetwothree").toggle();
+            $('.onetwothree').toggle();
             isKeyDown = true;
         }
         if (e.key === 'Escape') {
             loadFor(1000);
-            window.location = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+            window.location = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
             isKeyDown = true;
         }
         if (e.key === ' ') {
-            alert("you cannot jump here sadly")
+            alert('you cannot jump here sadly');
             isKeyDown = true;
         }
         if (e.shiftKey && e.ctrlKey && e.altKey && e.metaKey && e.key === 'ScrollLock') {
-            $("#combobreak")[0].play();
-            alert("the ultimate madlad\nwhy would you ever press all these???")
+            $('#combobreak')[0].play();
+            alert('the ultimate madlad\nwhy would you ever press all these???');
             setTimeout(function() {
-                window.location = "https://google.com/search?q=grass&udm=2";
+                window.location = 'https://google.com/search?q=grass&udm=2';
             }, 750);
             loadFor(1000);
             isKeyDown = true;
@@ -56,7 +55,7 @@ document.addEventListener('keydown', (e) => {
             }
             else if ((e.key === 'B' || e.key === 'b') && comboCount === 9) {
                 loadFor(2000);
-                window.location = "https://www.nyan.cat/#"; //TODO temp
+                window.location = 'https://www.nyan.cat/#'; //TODO temp
             }
             else {
                 comboCount = 0;
@@ -64,12 +63,12 @@ document.addEventListener('keydown', (e) => {
             isKeyDown = true;
         }
         if (e.key === 'c' || e.key === 'C') {
-            const backgroundColor = prompt("Enter a color, either common colors or in hex.\nNote: Only hex is guaranteed to work.", "Ex. red, #000000, FFFFFF, random");
-            if (backgroundColor === "random") {
-                document.body.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+            const backgroundColor = prompt('Enter a color, either common colors or in hex.\nNote: Only hex is guaranteed to work.', 'Ex. red, #000000, FFFFFF, random');
+            if (backgroundColor === 'random') {
+                document.body.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
             }
             else if (backgroundColor.length === 6) {
-                document.body.style.backgroundColor = "#" + backgroundColor;
+                document.body.style.backgroundColor = '#' + backgroundColor;
             }
             else {
                 document.body.style.backgroundColor = backgroundColor;
@@ -87,9 +86,9 @@ document.addEventListener('keyup', (e) => {
 loadFor(2000);
 
 function loadFor(t) {
-    $("#loading-container").toggleClass("loading");
+    $('#loading-container').toggleClass('loading');
     setTimeout(function() {
-      $("#loading-container").toggleClass("loading");
+      $('#loading-container').toggleClass('loading');
     }, t);
 }
 
