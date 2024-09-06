@@ -71,7 +71,12 @@ document.addEventListener('keydown', (e) => {
                 document.body.style.backgroundColor = '#' + backgroundColor;
             }
             else {
-                document.body.style.backgroundColor = backgroundColor;
+                try {
+                    document.body.style.backgroundColor = backgroundColor;
+                }
+                catch (error) {
+                    alert('Invalid Color.');
+                }
             }
             isKeyDown = true;
         }
