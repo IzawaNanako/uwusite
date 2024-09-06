@@ -12,7 +12,7 @@ $('.question').submit(function(e) {
     expression = expression.replace(/sin\(/g, 'sin(' + Math.PI / 180 + '*');
     expression = expression.replace(/cos\(/g, 'cos(' + Math.PI / 180 + '*');
     expression = expression.replace(/tan\(/g, 'tan(' + Math.PI / 180 + '*');
-    if (expression === 42) {
+    if (expression === '42') {
         $('.answer').text('The answer to life, the universe, and everything.');
     }
     else if (expression === 'The answer to life, the universe, and everything.') {
@@ -35,8 +35,8 @@ $('.question').submit(function(e) {
 })
 /*
 function startPiEvent() {
-    $('#question').hide();
-    $('#equal-operator').hide();
+    $('.question').hide();
+    $('.equal-operator').hide();
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             window.close;
@@ -49,13 +49,13 @@ function startPiEvent() {
 
     function timeBeforeDeath() {
         if (warningCountdown > 0) {
-            $('#answer').text('You got ' + warningCountdown/100 + ' more seconds to escape!');
+            $('.answer').text('You got ' + warningCountdown/100 + ' more seconds to escape!');
             setTimeout(function() {
                 timeBeforeDeath();
             }, 10);
         }
         else {
-            $('#answer').css('font-size', '12px').css('top', '0').css('left', '0');
+            $('.answer').css('font-size', '12px').css('top', '0').css('left', '0');
             calculatePi();
         }
         warningCountdown--;
