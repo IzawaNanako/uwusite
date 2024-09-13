@@ -19,8 +19,7 @@ $('.question').submit(function(e) {
         $('.answer').text(42);
     }
     else if (expression === 'π') {
-        // startPiEvent();
-        window.location='https://raw.githubusercontent.com/eneko/Pi/master/one-million.txt';
+        startPiEvent();
     }
     else {
         try {
@@ -33,13 +32,13 @@ $('.question').submit(function(e) {
         }
     }
 })
-/*
+
 function startPiEvent() {
     $('.question').hide();
     $('.equal-operator').hide();
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
-            window.close;
+            window.close();
         }
     })
 
@@ -56,9 +55,12 @@ function startPiEvent() {
         }
         else {
             $('.answer').css('font-size', '12px').css('top', '0').css('left', '0');
-            calculatePi();
+            calculatePi(1);
         }
         warningCountdown--;
     }
+
+    function calculatePi(n) {
+        $('.answer').text('Hello World!');
+    }
 }
-*/
