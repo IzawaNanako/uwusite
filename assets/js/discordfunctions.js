@@ -1,7 +1,11 @@
-const id = '1241999880428191765';
-const token = 'PM7g0ceu1CDF3rui9jcCDIbrAndYX8FjV8nzvMdlw6uXLNdlz7VEJfB9UogokLryhOHl';
+let webhookUrl = `https://discord.com/api/webhooks/1241999880428191765/PM7g0ceu1CDF3rui9jcCDIbrAndYX8FjV8nzvMdlw6uXLNdlz7VEJfB9UogokLryhOHl`;
 
-const webhookUrl = `https://discord.com/api/webhooks/${id}/${token}`;
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        e.preventDefault();
+        webhookUrl = prompt('Enter your webhook URL: ');
+    }
+});
 
 $('.message-form').submit(function(event) {
   event.preventDefault();
@@ -27,5 +31,3 @@ $('.message-form').submit(function(event) {
 
   $('.message-input').val('');
 });
-
-//TODO change webhook url by user.
