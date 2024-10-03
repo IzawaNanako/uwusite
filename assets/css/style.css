@@ -27,3 +27,26 @@ body {
 .hideCursor {
     cursor: none;
 }
+
+#textbox {
+    width: 90%;
+    display: table;
+    margin: auto;
+    text-align: center;
+}
+
+.message-form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.message-input {
+    display: table-cell;
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    font-family: monospace;
+    letter-spacing: 1px;
+}

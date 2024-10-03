@@ -68,7 +68,12 @@ document.addEventListener('keydown', (e) => {
                 document.body.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
             }
             else if (backgroundColor.length === 6) {
-                document.body.style.backgroundColor = '#' + backgroundColor;
+                try {
+                    document.body.style.backgroundColor = '#' + backgroundColor;
+                }
+                catch (error) {
+                    alert('Invalid Color.');
+                }
             }
             else {
                 try {

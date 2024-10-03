@@ -1,4 +1,5 @@
 //TODO still need more functions.
+//TODO fraction calculator.
 //TODO actually make pi event.
 $('.input').on('keyup', function(e) {
     if (e.key === '(') {
