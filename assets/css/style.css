@@ -1,7 +1,6 @@
 html {
     background: #201c1c;
-    height: 100%;
-    overflow: hidden;
+    height: 100vh;
 }
 
 body {
