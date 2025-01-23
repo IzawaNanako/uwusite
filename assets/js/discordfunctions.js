@@ -1,5 +1,6 @@
 // I'm literally the admin of this server and I made this webhook in this shitty server public just cuz it's funny. It's not a leak dumbass.
-let webhookUrl = `https://discord.com/api/webhooks/1241999880428191765/PM7g0ceu1CDF3rui9jcCDIbrAndYX8FjV8nzvMdlw6uXLNdlz7VEJfB9UogokLryhOHl`;
+// Now I'm quite interested to see how fast and how these "white hats" are going to be annoy one's server over anyone else.
+let webhookUrl = `https://discord.com/api/webhooks/1331806779008614483/W9apPB314wYmWezOCKITnmbOYSvm-2FVxktEiymFdmp0ypmNkGbVrpLzhT3puLimp3S1`;
 
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
