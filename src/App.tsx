@@ -1,32 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import catPaw from '/cat-paw.png'
 import './App.css'
+import React from 'react';
+import Typed from 'typed.js';
+
+function MyComponent() {
+  const el = React.useRef(null);
+
+  React.useEffect(() => {
+    const typed = new Typed(el.current, {
+        strings: ["My name is Wither.", "My name is Saduwub.", "My name is Nanako"],
+        typeSpeed: 75,
+        backSpeed: 50,
+        backDelay: 800,
+        startDelay: 0,
+        loop: true,
+        showCursor: false,
+        cursorChar: "|",
+    });
+
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+
+  return (
+    <div className="App">
+      <span ref={el} />
+    </div>
+  );
+}
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a href="https://www.saduwub.com" target="_blank">
+          <img src={catPaw} className="logo temp" alt="Wither logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+      <div className="after">
+                <h1 className="typed-heading">Welcome</h1>
+                <MyComponent />
+            </div>
+      <p className="introduction">
+        Enjoy your stay.
       </p>
     </>
   )
