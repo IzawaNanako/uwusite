@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@font-face { font-family: TT-Backwards-Sans-Bold; src: url('TT Backwards Sans Trial Bold.otf'); } 
+@font-face { font-family: Bold; src: url('bold_pw.ttf');}
 
 #root {
     max-width: 1280px;
@@ -31,6 +33,31 @@
   }
 }
 
+.triangle {
+    width: 0;
+    height: 0;
+    rotate: 180deg;
+    border-top-width: 640px;
+    border-top-style: solid;
+    border-top-color: transparent;
+    border-right-width: 450px;
+    border-right-style: solid;
+    border-right-color: pink;
+}
+
+.triangle-two {
+    width: 0;
+    height: 0;
+    rotate: 270deg;
+    border-top-width: 58px;
+    border-top-style: solid;
+    border-top-color: transparent;
+    border-right-width: 58px;
+    border-right-style: solid;
+    border-right-color: oklch(0.712 0.194 13.428);
+}
+
+
 .after {
     display: flex;
     justify-content: center;
@@ -41,7 +68,7 @@
 
 .namesAni {
     display: inline-block;
-    font-size: 5em;
+    font-size: 4.5em;
     color: rgb(235, 26, 172);
 }
 
@@ -59,4 +86,20 @@
     100% {
         opacity: 0;
     }
+}
+
+.side-buttons {
+    background-color: palevioletred;
+}
+
+.side-buttons:hover {
+    background-color: lightcoral;
+}
+
+.cloud {
+    height: 180px;
+    aspect-ratio: 1.8;
+    --g: radial-gradient(50% 50%, #000 98%, #0000) no-repeat;
+    mask: var(--g) 100% 100%/30% 60%,var(--g) 70% 0/50% 100%,var(--g) 0 100%/36% 68%,var(--g) 27% 18%/26% 40%,linear-gradient(#000 0 0) bottom/67% 58% no-repeat;
+    background: #269af2;
 }
