@@ -3,11 +3,14 @@ import ayame from './assets/img/ayame.png'
 import waveLine from './assets/img/wave-line.png'
 import kofi from './assets/img/ko-fi-icon.svg'
 import './App.css'
+/*
 import React from 'react';
 import Typed from 'typed.js';
+*/
 import { FaDiscord, FaGithub, FaTwitch, FaYoutube } from 'react-icons/fa';
 
 // Sorry my code is messy af, I was in a hurry when writing this site.
+/*
 function NameAniComponent() {
     const el = React.useRef(null);
 
@@ -36,6 +39,7 @@ function NameAniComponent() {
     </div>
     );
 }
+    */
 
 function App() {
     return (
