@@ -1,6 +1,6 @@
 @import "tailwindcss";
-@font-face { font-family: TT-Backwards-Sans-Bold; src: url('TT Backwards Sans Trial Bold.otf'); } 
-@font-face { font-family: Bold; src: url('bold_pw.ttf');}
+@font-face { font-family: TT-Backwards-Sans-Bold; src: url('/fonts/TT Backwards Sans Trial Bold.otf'); } 
+@font-face { font-family: Bold; src: url('/fonts/bold_pw.ttf');}
 
 #root {
     max-width: 1280px;
