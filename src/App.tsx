@@ -224,6 +224,17 @@ function Home() {
     );
 }
 
+function ErrorPage() {
+    return (
+        <>
+            <h1 className='text-rose-700 text-8xl h-[60vh]'>
+                Oops! Nothing was found, maybe you typed it wrong?
+            </h1>
+            <Footer />
+        </>
+    )
+}
+
 function Footer() {
     return (
         <>
@@ -264,6 +275,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<Home />} />
             <Route path='/projects' element={<Home />} />
+            <Route path="*" element={<ErrorPage />} />
         </Routes>
     );
 }
