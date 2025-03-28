@@ -1,8 +1,11 @@
 import catPaw from '/cat-paw.svg'
-import ayame from './assets/img/ayame.png'
+import towa from './assets/img/towa.png'
 import waveLine from './assets/img/wave-line.png'
 import kofi from './assets/img/ko-fi-icon.svg'
+import plink from './assets/img/plink-wide-cat.gif'
 import './App.css'
+import TermsOfService from './assets/scripts/terms'
+import PrivacyPolicy from './assets/scripts/privacy'
 import { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
 import { FaDiscord, FaGithub, FaTwitch, FaYoutube } from 'react-icons/fa';
@@ -49,7 +52,7 @@ function Home() {
             }
             else if (location.pathname === '/projects') {
                 window.scrollTo({
-                    top: window.innerHeight * 2.8,
+                    top: window.innerHeight * 2.1,
                     behavior: 'smooth',
                 });
             }
@@ -81,7 +84,7 @@ function Home() {
         }
         else {
             window.scrollTo({
-                top: window.innerHeight * 2.8,
+                top: window.innerHeight * 2.1,
                 behavior: 'smooth',
             });
             window.history.pushState(null, '', '/projects');
@@ -163,7 +166,7 @@ function Home() {
                     </a>
                 </div>
                 <div className='accessories'>
-                    <img src={ayame} className='absolute top-14.5 right-[-3em]' />
+                    <img src={towa} className='absolute top-26 right-6 h-auto w-100' />
                     <img src={waveLine} className='absolute left-0 bottom-[-13em]' />
                 </div>
                 <div className='absolute top-0 left-0 p-4 flex flex-col space-y-4 text-gray-900 font-[Bold] text-xl'>
@@ -178,46 +181,48 @@ function Home() {
                     </button>
                 </div>
             </section>
-            <section className='min-h-[100vh]'>
+            <section className='min-h-[100vh] max-h-[100vh]'>
                 <div className='after h-400'>
                     <NameAniComponent />
                 </div>
-                <p className='relative top-[-20em] text-4xl'>
-                    yo //TODO
+                <p className='relative top-[-20em] text-4xl text-left'>
+                    Hey there! I'm Wither (or Saduwub / Nanako—whichever you prefer). I'm a tech enthusiast, gamer, and cat lover who enjoys building things—whether it's coding projects, Discord bots, or just cool ideas in general.
+
+                    I have a passion for programming, especially working with TypeScript, React, and Discord bot development. When I’m not coding, you’ll probably find me watching anime, gaming, or just chilling.
+
+                    This site is a small corner of the internet where I share my projects, ideas, and whatever else comes to mind. Feel free to look around, and if you want to connect, check out my socials! 
                 </p>
             </section>
-            <section className='min-h-[100vh]'>
+            <section className='min-h-[100vh] max-h-[100vh]'>
                 <div className='projects flex h-400 justify-center items-center mx-auto gap-5'>
-                    <div className='top-20 project-card bg-gray-900 text-white w-[400px]'>
-                        <h2 className='text-6xl'>
+                    <div className='top-20 project-card bg-gray-900 text-white w-[400px] rounded-3xl'>
+                        <h2 className='text-6xl m-[20px]'>
                             Nanaz The Neko
                         </h2>
-                        <p className='text-2xl'>
-                            bot //TODO
+                        <p className='text-2xl text-left m-[20px]'>
+                            A Discord bot written using discord.js, designed to meet my preference of perfection, currently is capable of moderation, checking profiles and playing some simple games, more features to be added.
                         </p>
                     </div>
-                    <div className='top-20 project-card bg-gray-900 text-white w-[400px]'>
-                        <h2 className='text-6xl'>
+                    <div className='top-20 project-card bg-gray-900 text-white w-[400px] rounded-3xl'>
+                        <h2 className='text-6xl m-[20px]'>
                             Withering Hearts
                         </h2>
-                        <p className='text-2xl'>
-                            mod //TODO
+                        <p className='text-2xl text-left m-[20px]'>
+                            A Minecraft mod written in fabric for tweaks like removing the boudaries of attributes in my own server, potentially adding items and mobs in the future.
                         </p>
                     </div>
-                    <div className='top-20 project-card bg-gray-900 text-white w-[400px]'>
-                        <h2 className='text-6xl'>
+                    <div className='top-20 project-card bg-gray-900 text-white w-[400px] rounded-3xl'>
+                        <h2 className='text-6xl m-[20px]'>
                             Withering Dimension
                         </h2>
-                        <p className='text-2xl'>
-                            site //TODO
+                        <p className='text-2xl text-left m-[20px]'>
+                            A website to showcase my works, and possibly more in the future, still in heavy development.
                         </p>
                     </div>
                 </div>
             </section>
-            <section className='min-h-[100vh]'>
-                <div>
-                    hmm //TODO
-                </div>
+            <section className='min-h-[100vh] max-h-[100vh]'>
+                <img src={plink} className='h-auto w-full' />
             </section>
             <Footer />
         </>
@@ -245,8 +250,8 @@ function Footer() {
                         <a href='/' className='hover:underline'>Home</a>
                         <a href='/about' className='hover:underline'>About Me</a>
                         <a href='/projects' className='hover:underline'>Projects</a>
-                        <a href='/tos' className='hover:underline'>Terms of Service</a>
-                        <a href='/privacy-policy' className='hover:underline'>Privacy Policy</a>
+                        <a href='/terms' className='hover:underline'>Terms of Service</a>
+                        <a href='/privacy' className='hover:underline'>Privacy Policy</a>
                     </div>
                     {/*<p className='relative left-10 mt-2 md:mt-0 text-xs'>© {new Date().getFullYear()} Withering Dimension. All rights reserved.</p> */}
                 </div>
@@ -275,6 +280,8 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<Home />} />
             <Route path='/projects' element={<Home />} />
+            <Route path='terms' element={<TermsOfService />} />
+            <Route path='privacy' element={<PrivacyPolicy />} />
             <Route path="*" element={<ErrorPage />} />
         </Routes>
     );
